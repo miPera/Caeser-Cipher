@@ -4,6 +4,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet var inputTextField: UITextField!
     @IBOutlet var cipherResult: UILabel!
     @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var encryptButton: UIButton!
     
     let pickerData = ["1", "2", "3"]
     var alphabet = [Character]()            //alphabet array
