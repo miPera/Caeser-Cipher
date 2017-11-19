@@ -1,25 +1,20 @@
-//
-//  ViewController.swift
-//  Caesar Cipher
-//
-//  Created by Miguel Peralta on 11/18/17.
-//  Copyright © 2017 migPer. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
+    var alphabet = [Character]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        initAlphabet()
+        print(alphabet)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    /**
+        Initialize array of characters from the English alphabet
+    */
+    func initAlphabet () {
+        alphabet = (97...122).map({Character(UnicodeScalar($0))})
     }
-
-
 }
-
