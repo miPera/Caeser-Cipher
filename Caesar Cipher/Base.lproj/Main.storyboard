@@ -44,9 +44,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fv5-vf-HFx">
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="and-KT-rmm">
                                 <rect key="frame" x="0.0" y="451" width="375" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="bds-bq-4Ps"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="O7j-L2-TOK"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -61,7 +65,7 @@
                     </view>
                     <connections>
                         <outlet property="cipherResult" destination="wWx-lk-hYr" id="lz6-vV-zeY"/>
-                        <outlet property="picker" destination="Fv5-vf-HFx" id="Jyo-RW-OeU"/>
+                        <outlet property="picker" destination="and-KT-rmm" id="rf5-RK-qwW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
