@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,13 +28,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZCN-uJ-1Wg">
+                                <rect key="frame" x="16" y="131" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ZCN-uJ-1Wg" firstAttribute="top" secondItem="USO-0z-clt" secondAttribute="bottom" constant="31" id="Djh-GQ-vcR"/>
+                            <constraint firstItem="ZCN-uJ-1Wg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZWm-VI-Kqq"/>
+                            <constraint firstItem="ZCN-uJ-1Wg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="erq-i5-jfX"/>
                             <constraint firstItem="USO-0z-clt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="55" id="g56-nX-ymf"/>
                             <constraint firstItem="USO-0z-clt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xIu-OC-HUb"/>
+                            <constraint firstItem="ZCN-uJ-1Wg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xo6-PR-ozu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="ZCN-uJ-1Wg" id="apU-DX-mQ5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

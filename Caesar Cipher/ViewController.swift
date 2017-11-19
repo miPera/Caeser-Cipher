@@ -1,7 +1,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var alphabet = [Character]()
+    var alphabet = [Character]()                //alphabet array
+    @IBOutlet var inputTextField: UITextField!  //Outlet to UITextfield
 
     override func viewDidLoad() {
         super.viewDidLoad()
