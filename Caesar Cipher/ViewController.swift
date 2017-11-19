@@ -4,6 +4,7 @@ class ViewController: UIViewController {
     var alphabet = [Character]()                //alphabet array
     @IBOutlet var inputTextField: UITextField!  //Outlet to UITextfield
     @IBOutlet var cipherResult: UILabel!
+    @IBOutlet var picker: UIPickerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,6 @@ class ViewController: UIViewController {
         Action function that responds to text being input by user in text field.
     */
     @IBAction func inputTextFieldChanged(_ textField: UITextField) {
-        
+        cipherResult.text = textField.text
     }
 }
