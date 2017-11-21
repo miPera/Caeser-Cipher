@@ -6,12 +6,16 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var encryptButton: UIButton!
     
-    let pickerData = ["1", "2", "3"]
     var alphabet = [Character]()            //alphabet array
+    var chosenPickerRow: Int!
+    var inputText: String!
+    let pickerData = ["1", "2", "3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        chosenPickerRow = 0
+        inputText = ""
         initAlphabet()
     }
     
@@ -27,6 +31,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     */
     @IBAction func inputTextFieldChanged(_ textField: UITextField) {
         cipherResult.text = textField.text
+        inputText = textField.text
     }
     
     /**
@@ -52,8 +57,19 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     /**
         Detects element selected in picker view
+        Unicode conversion credit: http://keitaito.com/blog/2017/01/06/converting-character-tounicode-scalar-value-in-swift.html
     */
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+        print("Num: \(row + 1)")
+        //let anotherUnicodeScalarValueOfA = "A".unicodeScalars.map { $0.value }.reduce(0, +)
+    }
+    
+    /**
+        Action function that encrypts text in input textfield
+    */
+    @IBAction func encrypt(_ sender: UIButton) {
+        for i in inputText.characters {
+            print(i)
+        }
     }
 }
