@@ -61,7 +61,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     */
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("Num: \(row + 1)")
-        //let anotherUnicodeScalarValueOfA = "A".unicodeScalars.map { $0.value }.reduce(0, +)
     }
     
     /**
@@ -69,7 +68,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     */
     @IBAction func encrypt(_ sender: UIButton) {
         for i in inputText.characters {
-            print(i)
+            print("C: \(i)")
+            let unicodeScalar = ("\(i)").unicodeScalars.map { $0.value }.reduce(0, +)
+            print("U: \(unicodeScalar)")
         }
     }
 }
