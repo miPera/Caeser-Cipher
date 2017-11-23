@@ -1,22 +1,24 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    @IBOutlet var inputTextField: UITextField!
-    @IBOutlet var cipherResult: UILabel!
-    @IBOutlet weak var picker: UIPickerView!
-    @IBOutlet weak var encryptButton: UIButton!
+    @IBOutlet var inputTextField: UITextField!  //input text field
+    @IBOutlet var cipherResult: UILabel!        //label to show encrypted result
+    @IBOutlet weak var picker: UIPickerView!    //picker
+    @IBOutlet weak var encryptButton: UIButton! //encryption button
     
-    var alphabet = [Character]()            //alphabet array
-    var chosenPickerRow: Int!
-    var inputText: String!
-    let pickerData = ["1", "2", "3"]
+    var alphabet = [Character]()        //alphabet array
+    var chosenPickerRow: Int!           //chosen picker element
+    var inputText: String!              //contains input from input field
+    let pickerData = ["1", "2", "3"]    //picker data array
+    var encryptedInput: String!         //encrypted input text
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chosenPickerRow = 0
-        inputText = ""
-        initAlphabet()
+        chosenPickerRow = 1     //initial picker item should be 1
+        inputText = ""          //initial input text is empty
+        encryptedInput = ""     //initial encrypted input is empty
+        initAlphabet()          //initialize alphabet
     }
     
     /**
@@ -30,7 +32,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         Action function that responds to text being input by user in text field.
     */
     @IBAction func inputTextFieldChanged(_ textField: UITextField) {
-        cipherResult.text = textField.text
         inputText = textField.text
     }
     
@@ -60,17 +61,22 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         Unicode conversion credit: http://keitaito.com/blog/2017/01/06/converting-character-tounicode-scalar-value-in-swift.html
     */
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("Num: \(row + 1)")
+        chosenPickerRow = row + 1
     }
     
     /**
         Action function that encrypts text in input textfield
     */
     @IBAction func encrypt(_ sender: UIButton) {
+        
+        encryptedInput = ""
         for i in inputText.characters {
-            print("C: \(i)")
             let unicodeScalar = ("\(i)").unicodeScalars.map { $0.value }.reduce(0, +)
-            print("U: \(unicodeScalar)")
+            var integerOfScalar = Int(unicodeScalar)
+            integerOfScalar += chosenPickerRow
+            encryptedInput.append(Character(UnicodeScalar(integerOfScalar)!))
         }
+        
+        cipherResult.text = encryptedInput
     }
 }
