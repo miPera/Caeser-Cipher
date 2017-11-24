@@ -1,5 +1,6 @@
 import UIKit
 
+//Simple Caesar's Cipher application
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet var inputTextField: UITextField!  //input text field
     @IBOutlet var cipherResult: UILabel!        //label to show encrypted result
